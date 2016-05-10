@@ -1,0 +1,27 @@
+extends layoutresult
+
+block content
+
+    #header
+        h3= title
+    #navbar
+        ul
+            li
+                a(href = '/home') Home
+
+            li
+                a(href = '/newuser') Buy
+
+            li
+                a(href = '/newuser') Sell
+
+            li
+                a(href = '/signin') Sign In
+
+            li
+                a(href="/newuser", title="tohome") Sign Up
+
+            li
+                a(href = '') About
+    #path
+        p= result

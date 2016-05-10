@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	h3.
+		Users
+	ul
+		each user, i in profilelist
+			li#user_list_item
+				a(href="#") #{user.username} lives at
+				#{user.street} #{user.city}, #{user.state}
+
+		form#form_search(name="search", method="post",action="/search")
+			span Search
+			span &nbsp;
+			input#input_name(type="text", placeholder="", name="search")
+			br
+			br
+			button#submit_search(type="submit") search
+		br
+		br
+		form#form_upload(method="post",enctype="multipart/form-data",action="/uploaded")
+			input(type="text",name="title",placeholder="title")
+			input(type="file",name="upl")
+			br
+			span Public?
+			span &nbsp
+			input(type="checkbox", name="checked", value="true")
+			br
+			input(type="submit")
+
+
+	a(href="/home", title="tohome") Return

@@ -1,0 +1,45 @@
+extends layoutsignin
+
+block content 
+
+	#header
+		h3= title
+	#navbar
+		ul
+			li
+				a(href = '/home') Home
+				
+			li
+				a(href = '/newuser') Buy
+
+			li
+				a(href = '/newuser') Sell
+
+			li
+				a(href = '/signin') Sign In
+
+			li
+				a(href="/newuser", title="tohome") Sign Up
+			
+			li
+				a(href = '') About
+
+	div(id="content", style="height:500px")
+		h2= 'Welcome to RealtyHub'
+		h4= response
+		#signinblock
+			form#form_login(name = "signin", method='post', action='/login')
+				span Username
+				span &nbsp;
+				input(name='username', value='')
+				br
+				br
+				span Password
+				span &nbsp;
+				input(name='password', value='')
+				br
+				br
+				input(id="Signin" name = "Signin" type="submit" value="signin")
+			form#form_signup(name = "loginup", method='get', action='/newuser')
+				input(id="Signup" name = "Signup", type="submit", value="signup")
+		

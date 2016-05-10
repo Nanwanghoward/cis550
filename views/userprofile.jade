@@ -1,0 +1,65 @@
+extends layoutUserProfile
+
+block content
+
+	#header
+		h3= title
+	#navbar
+		ul
+			li
+				a(href = '/home') Home
+				
+			li
+				a(href = '/newuser') Buy
+
+			li
+				a(href = '/newuser') Sell
+
+			li
+				a(href = '/signin') Sign In
+
+			li
+				a(href="/newuser", title="tohome") Sign Up
+			
+			li
+				a(href = '') About
+		div#account
+			h2= "My Account"
+			p
+				table
+					tr='username: '+ username
+					br
+					tr= 'password: '+ password
+					br
+					tr= 'email: '+ email
+					br
+					tr= 'street: '+ street
+					br
+					tr= 'city: '+ city
+					br
+					tr= 'state: '+ state
+					br
+			//p   "My properties
+			//	|properity2
+
+	#bottomButton
+		//button#search(class="button", action="/home") Search
+		form#form_search(name="search", method="get",action="/result")
+				span Find your home
+				span &nbsp
+				input#key_one(type="text", placeholder="key_one", name="key_one")
+				span &nbsp
+				span &nbsp
+				span &nbsp
+				input#key_two(type="text", placeholder="key_two", name="key_two")
+				input(type="hidden", name="username", value= '#{username}')
+				button#submit_search(class="button", type="submit") search
+		
+		form#form_upload(method="post",enctype="multipart/form-data",action="http://filesystemenv.ka2nv6pc38.us-west-2.elasticbeanstalk.com/upload")
+				input(type="file",name="upl")
+				input(type="hidden", name="username", value= '#{username}')
+				span Public
+				span &nbsp
+				input(type="checkbox", name="public", value="true")
+				button#Upload(class="button", type="submit") Upload
+		

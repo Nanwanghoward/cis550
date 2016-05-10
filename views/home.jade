@@ -1,0 +1,33 @@
+extends layout
+
+block content 
+
+	#header
+		h3= title
+	#navbar
+		ul
+			li
+				a(href = '/home') Home
+				
+			li
+				a(href = '/newuser') Buy
+
+			li
+				a(href = '/newuser') Sell
+
+			li
+				a(href = '/signin') Sign In
+
+			li
+				a(href="/newuser", title="tohome") Sign Up
+			
+			li
+				a(href = '') About
+
+	div(id="content")
+		h2= 'Find your way home'
+		#searchblock
+			form#form_buy(name = "buy", method='get', action='/newuser')
+				input(class="btnxa" id="Buy" name="buy" type="submit" value="Buy")
+			form#form_sell(name = "sell", method='get', action='/newuser')
+				input(class="btnxb" id="Sell" name = "Sell" type="submit" value="Sell")
